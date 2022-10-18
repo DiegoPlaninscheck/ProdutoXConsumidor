@@ -24,7 +24,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="70149" class="javax.swing.JLabel" binding="produtor3">
+              <component id="70149" class="javax.swing.JLabel" binding="textoProdutor3">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -50,7 +50,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="c6e10" class="javax.swing.JLabel" binding="produtor1">
+              <component id="c6e10" class="javax.swing.JLabel" binding="textoProdutor1">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -58,7 +58,7 @@
                   <text value="Produtor 1:"/>
                 </properties>
               </component>
-              <component id="bcb90" class="javax.swing.JLabel" binding="consumidor1">
+              <component id="bcb90" class="javax.swing.JLabel" binding="textoConsumidor1">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -76,7 +76,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="631ce" class="javax.swing.JLabel" binding="produtor2">
+              <component id="631ce" class="javax.swing.JLabel" binding="textoProdutor2">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -84,7 +84,7 @@
                   <text value="Produtor2"/>
                 </properties>
               </component>
-              <component id="34e54" class="javax.swing.JLabel" binding="consumidor2">
+              <component id="34e54" class="javax.swing.JLabel" binding="textoConsumidor2">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>

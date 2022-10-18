@@ -6,12 +6,14 @@ public class Consumidor implements Runnable {
     private int id;
     private Semaphore semaforo;
     private JLabel textoConsumidor, bufferAtual;
+    private Boolean executar = true;
 
-    public Consumidor(int id, Semaphore semaforo, JLabel textoConsumidor, JLabel buffer) {
+    public Consumidor(int id, Semaphore semaforo, JLabel textoConsumidor, JLabel buffer, Boolean executar) {
         this.id = id;
         this.semaforo = semaforo;
         this.textoConsumidor = textoConsumidor;
         this.bufferAtual = buffer;
+        this.executar = executar;
     }
 
     Random radom = new Random();
@@ -21,7 +23,7 @@ public class Consumidor implements Runnable {
         try {
             Thread.sleep((long) (Math.random() * 3000));
             semaforo.acquire();
-            while (true) {
+            while (this.getExecutar()) {
                 int posicao = radom.nextInt(5);
                 if (TelaBuffer.buffer[posicao] != 0) {
                     System.out.println("Consumidor: " + id + " consumiu " + TelaBuffer.buffer[posicao] + " na posicao: " + (posicao + 1));
@@ -36,8 +38,6 @@ public class Consumidor implements Runnable {
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
-        } finally {
-            semaforo.release();
         }
     }
 
@@ -48,5 +48,13 @@ public class Consumidor implements Runnable {
     public void mostrarBuffer() {
         int[] buffer = TelaBuffer.buffer;
         bufferAtual.setText("{ " + buffer[0] + ", " + buffer[1] + ", " + buffer[2] + ", " + buffer[3] + ", " + buffer[4] + "}");
+    }
+
+    public Boolean getExecutar() {
+        return executar;
+    }
+
+    public void setExecutar(Boolean executar) {
+        this.executar = executar;
     }
 }

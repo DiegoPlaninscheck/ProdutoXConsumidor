@@ -22,25 +22,22 @@ public class Produtor implements Runnable {
         try {
             Thread.sleep((long) (Math.random() * 3000));
             semaforo.acquire();
-                while (this.getExecutar()) {
-                    int posicao = radom.nextInt(5);
-                    if (TelaBuffer.buffer[posicao] == 0) {
-                        int numero = radom.nextInt(10);
-                        TelaBuffer.buffer[posicao] = numero;
-                        System.out.println("Produtor: " + id + " produziu " + TelaBuffer.buffer[posicao] + " na posicao: " + (posicao + 1));
-                        setTexto("Adicionou " + numero + " na posição " + (posicao + 1));
-                    } else {
-                        System.out.println("Produtor: " + id + " não pode colocar o numero " + TelaBuffer.buffer[posicao] + " na posicao: " + (posicao + 1));
-                        setTexto("Posição " + (posicao + 1) + " já preenchida");
-                    }
-                    mostrarBuffer();
-                    Thread.sleep((long) (Math.random() * 3000));
+            while (this.getExecutar()) {
+                int posicao = radom.nextInt(5);
+                if (TelaBuffer.buffer[posicao] == 0) {
+                    int numero = radom.nextInt(10);
+                    TelaBuffer.buffer[posicao] = numero;
+                    System.out.println("Produtor: " + id + " produziu " + TelaBuffer.buffer[posicao] + " na posicao: " + (posicao + 1));
+                    setTexto("Adicionou " + numero + " na posição " + (posicao + 1));
+                } else {
+                    System.out.println("Produtor: " + id + " não pode colocar o numero " + TelaBuffer.buffer[posicao] + " na posicao: " + (posicao + 1));
+                    setTexto("Posição " + (posicao + 1) + " já preenchida");
                 }
-
+                mostrarBuffer();
+                Thread.sleep((long) (Math.random() * 3000));
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
-        } finally {
-            semaforo.release();
         }
     }
 
